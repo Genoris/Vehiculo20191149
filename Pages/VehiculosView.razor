@@ -1,0 +1,46 @@
+@page "/Vehiculos"
+
+@using  Vehiculos20191149.Data.Models;
+ 
+ <PageTitle>Ventas De Vehiculos</PageTitle>
+<h1>Registro De Vehiculos </h1>
+<label for="txtNombre">Vehiculos</label> 
+<input type="text" name="txtNombre" id="txtNombre">
+<br> <br>
+<label for="txtDescripcion">Marca</label>
+<input type="text" name="txtNombre" id="txtNombre">
+<br> <br>
+<label for="txtNombre">Modelo</label> 
+<input type="text" name="txtNombre" id="txtNombre">
+<br> <br>
+<label for="txtNombre">Año</label> 
+<input type="text" name="txtNombre" id="txtNombre">
+<br> <br>
+<label for="txtNombre">Color</label> 
+<input type="text" name="txtNombre" id="txtNombre">
+
+<button> ENVIAR</button>
+
+@foreach (var vehiculo in (vehiculos))
+{
+    
+                <tr>
+                    <td>@vehiculo.VehiculoID</td>
+                    <td>@vehiculo.Marca</td>
+                    <td>@vehiculo.Modelo</td>
+                    <td>@vehiculo.Año</td>
+                    <td>@vehiculo.Color</td>
+                </tr>
+}
+@code
+{
+    public Vehiculo Lista {get; set;}= new Vehiculo();
+    public List<Vehiculo> vehiculos {get;set;}
+        =new List<Vehiculo>(){};
+    
+}
+
+
+
+
+    
